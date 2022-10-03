@@ -36,4 +36,8 @@ public class FccController : ControllerBase
 			return BadRequest(new TimestampError());
 		}
 	}
+
+	[HttpGet("timestamp/api")]
+	public IActionResult TimestampMicroservice()
+		=> TimestampMicroservice(DateTime.UtcNow.ToString());
 }
